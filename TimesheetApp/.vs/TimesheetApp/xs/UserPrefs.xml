@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{4BAE7AD9-D11E-4707-A42C-FA8BEF80C49E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TimesheetApp.iOS/AppDelegate.cs">
+    <Files>
+      <File FileName="TimesheetApp/MainPage.xaml.cs" Line="18" Column="1" />
+      <File FileName="TimesheetApp/MainPage.xaml" Line="7" Column="15" />
+      <File FileName="TimesheetApp.Android/obj/Debug/lp/16/jl/res/values/values.xml" Line="18" Column="84" />
+      <File FileName="TimesheetApp.Android/Resources/values/colors.xml" Line="1" Column="1" />
+      <File FileName="TimesheetApp.Android/Resources/values/styles.xml" Line="1" Column="1" />
+      <File FileName="TimesheetApp.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="TimesheetApp.Android/Resources/Resource.designer.cs" Line="1" Column="1" />
+      <File FileName="TimesheetApp.Android/Properties/AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="TimesheetApp.iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="TimesheetApp.iOS/AppDelegate.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TimesheetApp.iOS FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TimesheetApp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+</Properties>
