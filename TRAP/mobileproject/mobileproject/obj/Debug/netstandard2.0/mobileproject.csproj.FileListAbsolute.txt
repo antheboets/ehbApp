@@ -1,0 +1,17 @@
+/Users/mac/Projects/mobileproject/mobileproject/bin/Debug/netstandard2.0/mobileproject.deps.json
+/Users/mac/Projects/mobileproject/mobileproject/bin/Debug/netstandard2.0/mobileproject.dll
+/Users/mac/Projects/mobileproject/mobileproject/bin/Debug/netstandard2.0/mobileproject.pdb
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.csprojAssemblyReference.cache
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/AboutPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/ItemDetailPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/ItemsPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/MenuPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/Views/NewItemPage.xaml.g.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.csproj.CoreCompileInputs.cache
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.AssemblyInfoInputs.cache
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.AssemblyInfo.cs
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.dll
+/Users/mac/Projects/mobileproject/mobileproject/obj/Debug/netstandard2.0/mobileproject.pdb

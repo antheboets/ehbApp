@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
+  <MonoDevelop.Ide.ItemProperties.mobileproject.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.ItemProperties.mobileproject.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.95183E9A-B480-4483-BB66-34AD510AC621" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="mobileproject/Views/MainPage.xaml.cs">
+    <Files>
+      <File FileName="mobileproject/Views/MainPage.xaml.cs" Line="21" Column="10" />
+      <File FileName="mobileproject/Views/MainPage.xaml" Line="18" Column="20" />
+      <File FileName="mobileproject/ViewModels/AboutViewModel.cs" Line="1" Column="1" />
+      <File FileName="mobileproject/ViewModels/ItemDetailViewModel.cs" Line="1" Column="1" />
+      <File FileName="mobileproject/ViewModels/BaseViewModel.cs" Line="1" Column="1" />
+      <File FileName="mobileproject/Views/AboutPage.xaml" Line="68" Column="15" />
+      <File FileName="mobileproject/Views/MenuPage.xaml" Line="6" Column="31" />
+      <File FileName="mobileproject/Views/ItemDetailPage.xaml" Line="9" Column="15" />
+      <File FileName="mobileproject/Views/MenuPage.xaml.cs" Line="53" Column="48" />
+      <File FileName="mobileproject/App.xaml" Line="13" Column="15" />
+      <File FileName="mobileproject/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="mobileproject.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="mobileproject/ViewModels/ItemsViewModel.cs" Line="1" Column="1" />
+      <File FileName="mobileproject/Views/AboutPage.xaml.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="mobileproject" expanded="True">
+            <Node name="mobileproject" expanded="True">
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="AboutPage.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True">
+                  <Node name="MainPage.xaml.cs" selected="True" />
+                </Node>
+                <Node name="MenuPage.xaml" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="mobileproject.Android" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
