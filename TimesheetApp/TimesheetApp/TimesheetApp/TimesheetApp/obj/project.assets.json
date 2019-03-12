@@ -47,7 +47,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -343,23 +343,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iljad\\.nuget\\packages\\": {},
+    "C:\\Users\\Anthe Boets\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iljad\\source\\repos\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp.csproj",
+      "projectUniqueName": "C:\\Users\\Anthe Boets\\Documents\\GitHub\\TimesheetReportingAppProject\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp.csproj",
       "projectName": "TimesheetApp",
-      "projectPath": "C:\\Users\\iljad\\source\\repos\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp.csproj",
-      "packagesPath": "C:\\Users\\iljad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iljad\\source\\repos\\TimesheetApp\\TimesheetApp\\TimesheetApp\\obj\\",
+      "projectPath": "C:\\Users\\Anthe Boets\\Documents\\GitHub\\TimesheetReportingAppProject\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp.csproj",
+      "packagesPath": "C:\\Users\\Anthe Boets\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anthe Boets\\Documents\\GitHub\\TimesheetReportingAppProject\\TimesheetApp\\TimesheetApp\\TimesheetApp\\TimesheetApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\iljad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anthe Boets\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
