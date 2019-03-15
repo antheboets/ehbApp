@@ -11,13 +11,24 @@ namespace TimesheetApp.Views
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+        Boolean userLoggedIn = Application.Current.Properties.ContainsKey("Auth_Token") ? Convert.ToBoolean(Application.Current.Properties["Auth_Token"]) : false;
         public MainPage()
         {
             InitializeComponent();
+            if (userLoggedIn)
+            {
+                MasterBehavior = MasterBehavior.Popover;
+                MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            }
+            else
+            {
+                PushLogin();
+            }
+        }
 
-            MasterBehavior = MasterBehavior.Popover;
-
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+        private async void PushLogin()
+        {
+            await Navigation.PushModalAsync(new LoginPage());
         }
 
         public async Task NavigateFromMenu(int id)

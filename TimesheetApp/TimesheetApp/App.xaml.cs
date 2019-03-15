@@ -13,7 +13,6 @@ namespace TimesheetApp
         {
             InitializeComponent();
 
-
             MainPage = new MainPage();
         }
 
