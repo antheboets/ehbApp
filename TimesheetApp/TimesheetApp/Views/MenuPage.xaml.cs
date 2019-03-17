@@ -20,7 +20,8 @@ namespace TimesheetApp.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Timeline, Title="Timeline" }
+                new HomeMenuItem {Id = MenuItemType.Timeline, Title="Timeline" },
+                new HomeMenuItem {Id = MenuItemType.Logout, Title="Log Out"}
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -31,6 +32,9 @@ namespace TimesheetApp.Views
                 if (e.SelectedItem == null)
                     return;
 
+                if (((HomeMenuItem)e.SelectedItem).Id == MenuItemType.Logout)
+                    Application.Current.Properties["Auth_Token"] = Boolean.FalseString;
+                
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
             };

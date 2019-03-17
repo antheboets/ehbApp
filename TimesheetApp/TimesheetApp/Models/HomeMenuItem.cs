@@ -8,7 +8,8 @@ namespace TimesheetApp.Models
     {
         Browse,
         About,
-        Timeline
+        Timeline,
+        Logout
     }
     public class HomeMenuItem
     {
