@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,15 +25,43 @@ namespace TimesheetApp.Views
         {
             LoginEmail = Email.Text;
             LoginWw = Ww.Text;
-            if(String.IsNullOrWhiteSpace(LoginEmail) || String.IsNullOrWhiteSpace(LoginWw))
+
+            Models.User user = new Models.User();
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://ehbpmagroup6.azurewebsites.net/User/Login"); //url
+            httpWebRequest.ContentType = "application/json"; //ContentType
+            httpWebRequest.Method = "POST"; //Methode
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                LoginError.IsVisible = true;
+                string json = "{\"email\":\"" + LoginEmail + "\",\"password\":\"" + LoginWw + "\"}"; //JSON body
+
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
             }
-            else
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse(); //sending request
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                Application.Current.Properties["Auth_Token"] = Boolean.TrueString;
-                LoginError.IsVisible = false;
-                await Navigation.PopModalAsync();
+                String result = streamReader.ReadToEnd(); //get result Json string From response
+
+
+                if (httpResponse.StatusCode.ToString() == "OK")
+                {
+                    JsonConvert.PopulateObject(result, user); //converting json string to Obj
+                    if (user.Id != 0)
+                    {
+                        Application.Current.Properties["Auth_Token"] = Boolean.TrueString;
+                        LoginError.IsVisible = false;
+                        await Navigation.PopModalAsync();
+                    }
+                    LoginError.IsVisible = true;
+                }
+                else
+                {
+                    LoginError.IsVisible = true;
+                }
             }
         }
     }
