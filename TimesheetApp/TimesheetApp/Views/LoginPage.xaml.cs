@@ -16,6 +16,7 @@ namespace TimesheetApp.Views
     {
         private String LoginEmail;
         private String LoginWw;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace TimesheetApp.Views
                     JsonConvert.PopulateObject(result, user); //converting json string to Obj
                     if (user.Id != 0)
                     {
+                        Models.User.LoggedInUser = user;
                         Application.Current.Properties["Auth_Token"] = Boolean.TrueString;
                         LoginError.IsVisible = false;
                         await Navigation.PopModalAsync();
