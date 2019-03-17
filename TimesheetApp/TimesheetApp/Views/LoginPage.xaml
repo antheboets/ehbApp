@@ -9,7 +9,7 @@
             <Label>Email</Label>
             <Entry Placeholder="Email" x:Name="Email"></Entry>
             <Label>Wachtwoord</Label>
-            <Entry Placeholder="Wachtwoord" x:Name="Ww"></Entry>
+            <Entry Placeholder="Wachtwoord" x:Name="Ww" IsPassword="True"></Entry>
             <Button x:Name="LoginButton" BackgroundColor="#e30713" TextColor="White" Clicked="LoginButtonClicked" Text="Inloggen"></Button>
         </StackLayout>
     </ContentPage.Content>
