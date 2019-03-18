@@ -53,7 +53,7 @@ namespace TimesheetApp.Views
                     if (user.Id != 0)
                     {
                         Models.User.LoggedInUser = user;
-                        Application.Current.Properties["Auth_Token"] = Boolean.TrueString;
+                        Application.Current.Properties["Auth_Token"] = user.Id;
                         LoginError.IsVisible = false;
                         await Navigation.PopModalAsync();
                     }
