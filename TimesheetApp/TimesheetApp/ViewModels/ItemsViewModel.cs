@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Threading;
 
 using Xamarin.Forms;
 
@@ -38,12 +39,30 @@ namespace TimesheetApp.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                var hasLogedIn = false;
+                while (!hasLogedIn)
+                {
+                    if (User.LoggedInUser == null)
+                    {
+                        await Task.Delay(100);
+                    }
+                    else
+                    {
+                        hasLogedIn = true;
+                        Items.Clear();
+                        foreach (var log in User.LoggedInUser.Logs)
+                        {
+                            Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = log.Description, Description = log.Start.ToLongTimeString() + " - " + log.Stop.ToLongTimeString() });
+                        }
+                    }
+                }
+                
+                //var items = await DataStore.GetItemsAsync(true);
+                /*foreach (var item in items)
                 {
                     Items.Add(item);
                 }
+                */
             }
             catch (Exception ex)
             {
