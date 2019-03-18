@@ -21,7 +21,6 @@ namespace TimesheetApp.Views
         public ItemsPage()
         {
             InitializeComponent();
-
             BindingContext = viewModel = new ItemsViewModel();
         }
 

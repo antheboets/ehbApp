@@ -20,8 +20,8 @@ namespace TimesheetApp.Views
             {
                 if (Application.Current.Properties["Auth_Token"] != null)
                 {
-                    MasterBehavior = MasterBehavior.Popover;
-                    MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+                        MasterBehavior = MasterBehavior.Popover;
+                        MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
                 }
             }
             else
