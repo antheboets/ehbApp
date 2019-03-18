@@ -8,6 +8,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.LocalNotifications;
 
 namespace TimesheetApp.Views
 {
@@ -54,6 +55,7 @@ namespace TimesheetApp.Views
                     {
                         Models.User.LoggedInUser = user;
                         Application.Current.Properties["Auth_Token"] = user.Id;
+                        CrossLocalNotifications.Current.Show(user.Name, "User" + user.Name + " is ingelogd", 1, new DateTime(2017, 1, 11, 22, 0, 0));
                         LoginError.IsVisible = false;
                         await Navigation.PopModalAsync();
                     }

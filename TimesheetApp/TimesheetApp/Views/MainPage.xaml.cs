@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.LocalNotification;
+using Plugin.LocalNotifications;
 
 namespace TimesheetApp.Views
 {
