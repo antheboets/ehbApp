@@ -49,7 +49,8 @@ namespace TimesheetApp.Views
                         MenuPages.Add(id, new NavigationPage(new Timeline()));
                         break;
                     case (int)MenuItemType.Logout:
-                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
+                        Application.Current.Properties.Clear();
+                        MenuPages.Add(id, new NavigationPage(new MainPage()));
                         break;
                 }
             }
