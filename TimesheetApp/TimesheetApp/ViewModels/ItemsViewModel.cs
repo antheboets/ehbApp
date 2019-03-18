@@ -38,12 +38,31 @@ namespace TimesheetApp.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var hasLoggedIn = false;
+                while (!hasLoggedIn)
+                {
+                    if (User.LoggedInUser == null)
+                    {
+                        await Task.Delay(100);
+                    }
+                    else
+                    {
+                        hasLoggedIn = true;
+                        Items.Clear();
+                        foreach (var log in User.LoggedInUser.Logs)
+                        {
+                            Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = log.Description, Description = log.Start.ToLongTimeString() + " - " + log.Stop.ToLongTimeString() });
+                        }
+                    }
+                }
+
+                //var items = await DataStore.GetItemsAsync(true);
+                /*
                 foreach (var item in items)
                 {
                     Items.Add(item);
                 }
+                */
             }
             catch (Exception ex)
             {
