@@ -49,10 +49,5 @@ namespace TimesheetApp.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
-
-        private void LogoutClicked(object sender, EventArgs e)
-        {
-            Application.Current.Properties["Auth_Token"] = Boolean.FalseString;
-        }
     }
 }

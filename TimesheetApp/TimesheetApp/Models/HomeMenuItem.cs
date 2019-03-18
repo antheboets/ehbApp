@@ -9,7 +9,8 @@ namespace TimesheetApp.Models
         Browse,
         About,
         Timeline,
-        Logout
+        Logout,
+        Userinfo
     }
     public class HomeMenuItem
     {
