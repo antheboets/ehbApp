@@ -29,7 +29,7 @@ namespace TimesheetApp.Views
 
             Models.User user = new Models.User();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://ehbpmagroup6.azurewebsites.net/User/Login"); //url
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/User/Login"); //url
             httpWebRequest.ContentType = "application/json"; //ContentType
             httpWebRequest.Method = "POST"; //Methode
 
@@ -55,7 +55,8 @@ namespace TimesheetApp.Views
                     {
                         Models.User.LoggedInUser = user;
                         Application.Current.Properties["Auth_Token"] = user.Id;
-                        CrossLocalNotifications.Current.Show(user.Name, "User" + user.Name + " is ingelogd", 1, new DateTime(2017, 1, 11, 22, 0, 0));
+                        // test notificatie
+                        CrossLocalNotifications.Current.Show(user.Name, "User " + user.Name + " is ingelogd", 1, new DateTime(2017, 1, 11, 22, 0, 0));
                         LoginError.IsVisible = false;
                         await Navigation.PopModalAsync();
                     }

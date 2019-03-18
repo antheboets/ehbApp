@@ -8,7 +8,7 @@ namespace TimesheetApp
 {
     public partial class App : Application
     {
-
+        public static string urlAPI = "https://ehbpmagroup6.azurewebsites.net";
         public App()
         {
             InitializeComponent();
