@@ -38,8 +38,8 @@ namespace TimesheetApp.ViewModels
 
             try
             {
-                var hasLogedIn = false;
-                while (!hasLogedIn)
+                var hasLoggedIn = false;
+                while (!hasLoggedIn)
                 {
                     if (User.LoggedInUser == null)
                     {
@@ -47,7 +47,7 @@ namespace TimesheetApp.ViewModels
                     }
                     else
                     {
-                        hasLogedIn = true;
+                        hasLoggedIn = true;
                         Items.Clear();
                         foreach (var log in User.LoggedInUser.Logs)
                         {
