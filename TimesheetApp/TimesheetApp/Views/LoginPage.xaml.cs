@@ -27,9 +27,9 @@ namespace TimesheetApp.Views
             LoginEmail = Email.Text;
             LoginWw = Ww.Text;
 
-            Models.User user = new Models.User();
+            DTO.Login login = new DTO.Login();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/User/Login"); //url
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/Auth/Login"); //url
             httpWebRequest.ContentType = "application/json"; //ContentType
             httpWebRequest.Method = "POST"; //Methode
 
@@ -50,13 +50,12 @@ namespace TimesheetApp.Views
 
                 if (httpResponse.StatusCode.ToString() == "OK")
                 {
-                    JsonConvert.PopulateObject(result, user); //converting json string to Obj
-                    if (user.Id != 0)
+                    JsonConvert.PopulateObject(result, login); //converting json string to Obj
+                    if (login.Token != null)
                     {
-                        Models.User.LoggedInUser = user;
-                        Application.Current.Properties["Auth_Token"] = user.Id;
+                        Application.Current.Properties["Auth_Token"] = login.Token;
                         // test notificatie
-                        CrossLocalNotifications.Current.Show(user.Name, "User " + user.Name + " is ingelogd", 1, new DateTime(2017, 1, 11, 22, 0, 0));
+                        //CrossLocalNotifications.Current.Show(user.Name, "User " + user.Name + " is ingelogd", 1, new DateTime(2017, 1, 11, 22, 0, 0));
                         LoginError.IsVisible = false;
                         await Navigation.PopModalAsync();
                     }

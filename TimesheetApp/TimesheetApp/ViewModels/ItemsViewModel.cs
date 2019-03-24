@@ -7,6 +7,10 @@ using Xamarin.Forms;
 
 using TimesheetApp.Models;
 using TimesheetApp.Views;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace TimesheetApp.ViewModels
 {
@@ -41,7 +45,7 @@ namespace TimesheetApp.ViewModels
                 var hasLoggedIn = false;
                 while (!hasLoggedIn)
                 {
-                    if (User.LoggedInUser == null)
+                    if (Application.Current.Properties["Auth_Token"] == null)
                     {
                         await Task.Delay(100);
                     }
@@ -49,10 +53,39 @@ namespace TimesheetApp.ViewModels
                     {
                         hasLoggedIn = true;
                         Items.Clear();
+
+                        DTO.LogArray logs = new DTO.LogArray();
+
+                        var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/Log/GetAll"); //url
+                        httpWebRequest.ContentType = "application/json"; //ContentType
+                        httpWebRequest.Method = "POST"; //Methode
+                        httpWebRequest.Headers.Add("Authorization", "Bearer" + Application.Current.Properties["Auth_Token"]);
+
+                        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse(); //sending request
+                        using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                        {
+                            
+                            String result = streamReader.ReadToEnd(); //get result Json string From response
+
+                            if (httpResponse.StatusCode.ToString() == "OK")
+                            {
+                                JsonConvert.PopulateObject(result, logs); //converting json string to Obj
+                                foreach (var log in logs.Logs)
+                                {
+                                    Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = log.Description, Description = log.Start.ToLongTimeString() + " - " + log.Stop.ToLongTimeString() });
+                                }
+                            }
+                            else
+                            {
+                                Items.Add(new Item { Id = "Something went wrong", Text = "Something went wrong", Description = "Something went wrong" });
+                            }
+                        }
+                        /*
                         foreach (var log in User.LoggedInUser.Logs)
                         {
                             Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = log.Description, Description = log.Start.ToLongTimeString() + " - " + log.Stop.ToLongTimeString() });
                         }
+                        */
                     }
                 }
 
