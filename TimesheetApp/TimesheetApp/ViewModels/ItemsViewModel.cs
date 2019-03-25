@@ -58,7 +58,7 @@ namespace TimesheetApp.ViewModels
 
                         var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/Log/GetAll"); //url
                         httpWebRequest.ContentType = "application/json"; //ContentType
-                        httpWebRequest.Method = "POST"; //Methode
+                        httpWebRequest.Method = "GET"; //Methode
                         httpWebRequest.Headers.Add("Authorization", "Bearer" + Application.Current.Properties["Auth_Token"]);
 
                         var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse(); //sending request
