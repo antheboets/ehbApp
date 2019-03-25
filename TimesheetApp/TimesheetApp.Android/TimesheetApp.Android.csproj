@@ -54,6 +54,9 @@
     <PackageReference Include="Plugin.LocalNotification">
       <Version>2.0.7</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule">
+      <Version>16.4.0.54</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
