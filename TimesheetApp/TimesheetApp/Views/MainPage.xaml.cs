@@ -18,10 +18,13 @@ namespace TimesheetApp.Views
             InitializeComponent();
             if (Application.Current.Properties.ContainsKey("Auth_Token"))
             {
-                if (Application.Current.Properties["Auth_Token"] != null)
+                if ((string)Application.Current.Properties["Auth_Token"] != "")
                 {
                         MasterBehavior = MasterBehavior.Popover;
                         MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+                }
+                else{
+                    PushLogin();
                 }
             }
             else

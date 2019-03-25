@@ -12,7 +12,7 @@ namespace TimesheetApp
         public App()
         {
             InitializeComponent();
-
+            SetProperties("Auth_Token", "");
             MainPage = new MainPage();
         }
 
@@ -29,6 +29,12 @@ namespace TimesheetApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+        public async static void SetProperties(string property, object value)
+        {
+            var app = (App)Application.Current;
+            app.Properties[property] = value;
+            await app.SavePropertiesAsync();
         }
     }
 }
