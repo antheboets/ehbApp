@@ -11,6 +11,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace TimesheetApp.ViewModels
 {
@@ -45,12 +46,14 @@ namespace TimesheetApp.ViewModels
                 var hasLoggedIn = false;
                 while (!hasLoggedIn)
                 {
-                    if (Application.Current.Properties["Auth_Token"] == null)
+                    if ((string)Application.Current.Properties["Auth_Token"] == "")
                     {
                         await Task.Delay(100);
                     }
                     else
                     {
+                        
+                        var testy = (string)Application.Current.Properties["Auth_Token"];
                         hasLoggedIn = true;
                         Items.Clear();
 
@@ -59,7 +62,7 @@ namespace TimesheetApp.ViewModels
                         var httpWebRequest = (HttpWebRequest)WebRequest.Create(App.urlAPI + "/Log/GetAll"); //url
                         httpWebRequest.ContentType = "application/json"; //ContentType
                         httpWebRequest.Method = "GET"; //Methode
-                        httpWebRequest.Headers.Add("Authorization", "Bearer" + Application.Current.Properties["Auth_Token"]);
+                        httpWebRequest.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["Auth_Token"]);
 
                         var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse(); //sending request
                         using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
