@@ -72,6 +72,14 @@ namespace TimesheetApp.ViewModels
 
                             if (httpResponse.StatusCode.ToString() == "OK")
                             {
+                                int countTest = 0;
+                                JObject jObject = JObject.Parse(result);
+                                foreach (var logsFromJson in jObject)
+                                {
+                                    countTest = countTest + 1;
+                                    //(string)logsFromJson.Value;
+                                    //Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = logsFromJson.Value, Description = logsFromJson.Start.ToLongTimeString() + " - " + log.Stop.ToLongTimeString() });
+                                }
                                 JsonConvert.PopulateObject(result, logs); //converting json string to Obj
                                 foreach (var log in logs.Logs)
                                 {
