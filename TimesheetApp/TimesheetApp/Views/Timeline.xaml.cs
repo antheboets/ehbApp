@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using TimesheetApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +15,7 @@ namespace TimesheetApp.Views
 	{
 		public Timeline ()
 		{
-			InitializeComponent ();
+            InitializeComponent();
 		}
 	}
 }
